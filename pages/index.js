@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Button } from "../component/Button/Button";
+import trashPic from "../Media/trash.svg";
 
 export default function Home() {
   return (
@@ -13,15 +14,23 @@ export default function Home() {
       <div
         style={{
           display: "flex",
+          alignItems: "center",
           columnGap: "10px",
-          padding: "30px",
+          rowGap: "20px",
+          padding: "20px",
           backgroundColor: "rgba(35,48,61)",
           marginTop: "10px",
+          flexWrap: "wrap",
         }}
       >
-        <Button text="TEXT" style="small" />
-        <Button text="CONTAINED" style="lg--light" />
-        <Button text="OUTLINED" style="lg--dark" />
+        <Button text="TEXT" style={["small"]} />
+        <Button text="CONTAINED" style={["lg--light"]} />
+        <Button text="OUTLINED" style={["lg--dark"]} />
+        <Button text="SMALL" style={["lg--light", "sm"]} />
+        <Button text="MEDIUM" style={["lg--light", "medium"]} />
+        <Button text="LARGE" style={["lg--light", "large"]} />
+        <Button text="DELETE" style={["lg--dark", "large"]} pic={trashPic} />
+        <Button text="SEND" style={["lg--light", "large"]} />
       </div>
     </div>
   );

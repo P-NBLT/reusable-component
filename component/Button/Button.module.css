@@ -1,5 +1,7 @@
 .default {
   padding: 5px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .small {
@@ -20,4 +22,17 @@
   color: #88c0ec;
   border: #486b88;
   border-radius: 5px;
+}
+
+.sm {
+  height: 20px;
+  color: #17293d;
+}
+
+.medium {
+  height: 30px;
+}
+
+.large {
+  height: 40px;
 }
