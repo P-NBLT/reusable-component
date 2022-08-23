@@ -1,0 +1,26 @@
+.default {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.small {
+  background-color: #17293d;
+  color: #87bfec;
+  border: none;
+  border-radius: 5px;
+}
+
+.lg--light {
+  background-color: #90caf9;
+  color: #223341;
+  border: none;
+  border-radius: 5px;
+}
+.lg--dark {
+  background-color: #091929;
+  color: #88c0ec;
+  border: #486b88;
+  border-radius: 5px;
+}
