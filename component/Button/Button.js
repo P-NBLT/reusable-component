@@ -2,21 +2,31 @@ import React, { useState } from "react";
 import styles from "./Button.module.css";
 import PropTypes from "prop-types";
 
-export const Button = ({ text, style, pic }) => {
-  const css = `${styles.default} ${styles[style[0]]}`;
-  const secondClass = style[1] ? `${css} ${styles[style[1]]} ` : css;
+export const Button = (props) => {
+  const css = `${styles.default} ${styles[props.variant[0]]}`;
+  const secondClass = props.variant[1]
+    ? `${css} ${styles[props.variant[1]]} `
+    : css;
 
   //   let className = `${style.default}`;
   //   if (["small", "lg--light", "lg--dark"].includes(style)) {
   //     className = `${defaultCss} ${styles[style]}`;
   //   }
-  console.log(pic);
+
   return (
-    <button className={secondClass}>
-      {pic ? (
-        <img src={pic.src} style={{ widht: "20px", height: "20px" }} />
+    <button
+      {...props}
+      className={secondClass}
+      // onClick={props.onClick}
+      // disabled={props.disabled}
+    >
+      {props.pic ? (
+        <img
+          src={props.pic.src}
+          style={{ marginRight: "5px", idht: "20px", height: "20px" }}
+        />
       ) : null}
-      {text}
+      {props.children}
     </button>
   );
   //   return <button className={className}>{text}</button>;

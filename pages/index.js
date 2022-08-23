@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Button } from "../component/Button/Button";
 import trashPic from "../Media/trash.svg";
+import sendPic from "../Media/send.svg";
 
 export default function Home() {
   return (
@@ -23,14 +24,32 @@ export default function Home() {
           flexWrap: "wrap",
         }}
       >
-        <Button text="TEXT" style={["small"]} />
-        <Button text="CONTAINED" style={["lg--light"]} />
-        <Button text="OUTLINED" style={["lg--dark"]} />
-        <Button text="SMALL" style={["lg--light", "sm"]} />
-        <Button text="MEDIUM" style={["lg--light", "medium"]} />
-        <Button text="LARGE" style={["lg--light", "large"]} />
-        <Button text="DELETE" style={["lg--dark", "large"]} pic={trashPic} />
-        <Button text="SEND" style={["lg--light", "large"]} />
+        <Button
+          text="TEXT"
+          variant={["small"]}
+          onClick={() => window.alert("small button")}
+        />
+        <Button text="CONTAINED" variant={["lg--light"]} />
+        <Button text="OUTLINED" variant={["lg--dark"]} />
+        <Button text="SMALL" variant={["lg--light", "sm"]} />
+        <Button text="MEDIUM" variant={["lg--light", "medium"]} />
+        <Button text="LARGE" variant={["lg--light", "large"]} />
+        <Button
+          text="DELETE"
+          variant={["lg--dark", "large"]}
+          pic={trashPic}
+          onClick={() => window.alert("trash")}
+          disabled={true}
+        />
+        <Button text="SEND" variant={["lg--light", "large"]} pic={sendPic} />
+        <Button variant={["lg--light", "large"]}>
+          <img src={sendPic.src} style={{ height: "20px", width: "20px" }} />
+          Click me
+        </Button>
+        <button disabled={true} onClick={() => window.alert("you clicked me")}>
+          <img src={sendPic.src} />
+          Click me
+        </button>
       </div>
     </div>
   );
